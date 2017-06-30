@@ -1,0 +1,47 @@
+<!-- Navegacion de la seccion central-->
+<div class="container">
+    <section class="main">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="#/Users">USUARIO</a></li>
+                    <li role="presentation"><a href="#/Clients">CLIENTE</a></li>
+                    <li role="presentation"><a href="#/Projects">PROYECTO</a></li>
+                    <li role="presentation"><a href="#">MAPA</a></li>
+                    <li role="presentation"><a href="#/Profile">ADMINISTRADOR</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="text-align: center">
+                        <h1 align=center>Listado de Proyectos</h1>
+
+                        <a href="#/Project" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus-sign"></span>Adicionar Proyecto
+
+
+                        </a>
+                        <p></p>
+                        <div data-ng-show="showError" ng-class="{fade:doFade}" class="alert alert-danger">
+                            {{successmessage}}
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="col-md-12 col-lg-12" ultimate-datatable="datatable">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</section>
+
+ 

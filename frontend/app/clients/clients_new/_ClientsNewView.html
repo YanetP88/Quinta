@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="row"></div>
+</div>
+<!-- Navegacion de la seccion central-->
+<div class="container">
+    <section class="main">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="#/Users">USUARIO</a></li>
+                    <li role="presentation"><a href="#/Clients">CLIENTE</a></li>
+                    <li role="presentation"><a href="#/Projects">PROYECTO</a></li>
+                    <li role="presentation"><a href="#">MAPA</a></li>
+                    <li role="presentation"><a href="#/Profile">ADMINISTRADOR</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row" style="text-align: center">
+                    <h1>Cliente</h1>
+                </div>
+                <div class="row">
+                    <form class="form-horizontal" role="form" method="post" name="userForm">
+                        <input type="hidden" name="avatar" ng-model="user.avatar"/>
+                        <div class="form-group">
+                            <label for="user" class="col-lg-2 control-label">Usuario:</label>
+                            <div class="col-lg-3">
+                                <input id="name" class="form-control" name="user" ng-model="formData.user" type="text">
+                            </div>
+
+                            <label for="password" class="col-lg-2 control-label">Contraseña:</label>
+                            <div class="col-lg-3">
+                                <input id="password" class="form-control" name="password" ng-model="formData.password"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="name" class="col-lg-2 control-label">Nombre:</label>
+                            <div class="col-lg-3">
+                                <input id="name" class="form-control" name="name"
+                                       ng-model="formData.name"
+                                       type="text">                                     
+                                    <span class="text-danger"
+                                      ng-show="(userForm.name.$touched  || submitted) && userForm.name.$error.required">El campo Nombre es obligatorio.</span>
+                            </div>
+
+                            <label for="last_name" class="col-lg-2 control-label">Apellidos: </label>
+                            <div class="col-lg-3">
+                                <input required class="form-control" id="last_name" name="last_name"
+                                       ng-model="formData.last_name"
+                                       type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.last_name.$touched  || submitted) && userForm.last_name.$error.required">El campo Apellidos es obligatorio.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-lg-2 control-label">Email: </label>
+                            <div class="col-lg-3">
+                                <input required class="form-control" id="email" type="email" name="email"
+                                       ng-model="formData.email"
+                                       type="text">
+
+                                <span class="text-danger"
+                                      ng-show="(userForm.email.$touched  || submitted) && userForm.email.$error.required">El campo Email es obligatorio.</span>
+
+                                <span class="text-danger"
+                                      ng-show="(userForm.email.$touched || submitted) && userForm.email.$error.email">Email invalido.</span>
+                            </div>
+
+
+                            <label for="type" class="col-lg-2 control-label">Teléfono: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="telephone" name="telephone"
+                                       ng-model="formData.telephone" type="telephone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+
+                            <label class="col-lg-2 control-label">Fecha de Registro</label>
+                            <div class="col-lg-3">
+                                <input type="date" class="form-control" id="last_access_date" name="last_access_date"
+                                       ng-model="formData.last_access_date" required>
+                                <span class="text-danger" ng-show="(userForm.last_access_date.$touched || submitted)">Fecha invalida.</span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-lg-8" style="text-align: center">
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#myModal">Cancelar
+                                </button>
+                                <button class="btn btn-primary" type="submit"
+                                        ng-click="userForm.$valid && createClient()">{{action}}
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+
+            </div>
+            <div class="modal-body">
+
+                <p>Está seguro que desea cancelar la operación?</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button ng-click="Back()" class="btn btn-primary">Sí</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</div>

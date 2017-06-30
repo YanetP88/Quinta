@@ -1,0 +1,411 @@
+<div class="container">
+    <div class="row"></div>
+</div>
+<!-- Navegacion de la seccion central-->
+<div class="container">
+    <section class="main">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="#/Users">USUARIO</a></li>
+                    <li role="presentation"><a href="#/Clients">CLIENTE</a></li>
+                    <li role="presentation"><a href="#/Projects">PROYECTO</a></li>
+                    <li role="presentation"><a href="#">MAPA</a></li>
+                    <li role="presentation"><a href="#/Profile">ADMINISTRADOR</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row" style="text-align: center">
+                    <h1>Proyecto</h1>
+
+                </div>
+                <div class="row">
+                    <form class="form-horizontal" role="form" method="post" name="userForm">
+                        <input type="hidden" name="avatar" ng-model="user.avatar"/>
+                        <div class="form-group">
+                            <label for="name" class="col-lg-2 control-label">Nombre:</label>
+                            <div class="col-lg-3">
+                                <input id="name" required class="form-control" name="name" ng-model="formData.name"
+                                       type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.name.$touched || submitted) && userForm.name.$invalid">El campo Nombre es obligatorio.</span>
+                            </div>
+
+                            <!--  </div>
+                                  <div class="form-group"> -->
+                            <label for="benefits" class="col-lg-2 control-label">Personas Beneficiadas: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="benefits" name="benefits" ng-model="formData.benefits"
+                                       required type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.benefits.$touched || submitted) && userForm.benefits.$invalid">El campo Beneficios es obligatorio.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motivation" class="col-lg-2 control-label">Motivación: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="motivation" name="motivation"
+                                       ng-model="formData.motivation" required
+                                       type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.motivation.$touched || submitted) && userForm.motivation.$invalid">El campo Motivación es obligatorio.</span>
+                            </div>
+                            <label for="involved" class="col-lg-2 control-label">Involucrados: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="involved" name="involved"
+                                       ng-model="formData.involved" required
+                                       type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.involved.$touched || submitted) && userForm.involved.$invalid">El campo Involucrados es obligatorio.</span>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <label for="investment" class="col-lg-2 control-label">Inversión: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="investment" name="investment"
+                                       required ng-model="formData.investment" type="number">
+
+                                <span class="text-danger"
+                                      ng-show="(userForm.investment.$touched) && userForm.investment.$error.required">El campo Inversión es obligatorio.</span>
+
+                                <span class="text-danger"
+                                      ng-show="(userForm.investment.$touched || submitted)  && userForm.investment.$error.number">El valor debe ser un numero.</span>
+                            </div>
+
+
+                            <label for="address" class="col-lg-2 control-label">Dirección: </label>
+                            <div class="col-lg-3">
+                                <input class="form-control" id="address" name="address" ng-model="formData.address"
+                                       required type="text">
+                                <span class="text-danger"
+                                      ng-show="(userForm.address.$touched || submitted)  && userForm.address.$invalid">El campo Dirección es obligatorio.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Fecha de Creación</label>
+                            <div class="col-lg-3">
+                                <input type="date" class="form-control" id="fecha_c" name="creation_date"
+                                       ng-model="formData.creation_date" required>
+                                <span class="text-danger"
+                                      ng-show="(userForm.creation_date.$touched  || submitted)  && userForm.creation_date.$invalid">El campo Fecha de Creación es obligatorio.</span>
+                            </div>
+
+
+                            <label class="col-lg-2 control-label">Fecha de Registro</label>
+                            <div class="col-lg-3">
+                                <input type="date" class="form-control" name="registry_date"
+                                       ng-model="formData.registry_date"
+                                       id="date" required>
+                                <span class="text-danger"
+                                      ng-show="(userForm.registry_date.$touched || submitted)  && userForm.registry_date.$invalid">El campo Fecha de Registro es obligatorio.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-lg-2 control-label">Descripción:</label>
+                            <div class="col-lg-3">
+                        <textarea rows="5" id="description" class="form-control" name="description"
+                                  ng-model="formData.description" required
+                                  type="text">
+                            </textarea>
+                                <span class="text-danger"
+                                      ng-show="(userForm.description.$touched || submitted) && userForm.description.$invalid">El campo Descripción es obligatorio.</span>
+                            </div>
+
+
+                            <label for="construction_time" class="col-lg-2 control-label">Tiempo de
+                                Construcción: </label>
+                            <div class="col-lg-3">
+                                <input id="construction_time" class="form-control" name="construction_time"
+                                       required ng-model="formData.construction_time" type="number">
+                                <span class="text-danger"
+                                      ng-show="(userForm.construction_time.$touched || submitted)  && userForm.construction_time.$error.number">El Tiempo de Construcción debe ser un numero.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="construction_time" class="col-lg-3 control-label">Imágenes: </label>
+                            <div class="col-lg-8">
+                                <div class="btn btn-default image-preview-input">
+                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                    <span class="image-preview-input-title">Subir Imágenes</span>
+                                    <input type="file" name="images" nv-file-select="images" uploader="uploader"
+                                           multiple/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="custom-preview" ng-if="formData.images">
+                            <div id="img_container" ng-repeat="image in formData.images">
+                                <a class="" data-fancybox="images" data-fancybox="images" href="/image/{{image}}">
+                                    <img class="img-responsive img-thumbnail image" ng-src="/image/{{image}}">
+                                </a>
+                                <button class="button" ng-click="deleteImage(image)"><span
+                                        class="fa fa-trash"></span></button>
+                            </div>
+                        </div>
+
+
+                        <div class="container" ng-if="view_images_uploader">
+
+                            <div class="row">
+
+                                <div class="col-md-9" style="margin-bottom: 40px">
+
+                                    <h3>Upload queue</h3>
+                                    <p>Queue length: {{ uploader.queue.length }}</p>
+
+                                    <table class="table">
+
+                                        <thead>
+                                        <tr>
+                                            <th width="50%">Name</th>
+                                            <th ng-show="uploader.isHTML5">Size</th>
+                                            <th ng-show="uploader.isHTML5">Progress</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in uploader.queue">
+                                            <td>
+                                                <strong>{{ item.file.name }}</strong>
+                                                <!-- Image preview -->
+                                                <!--auto height-->
+                                                <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                                                <!--auto width-->
+                                                <div ng-show="uploader.isHTML5"
+                                                     ng-thumb="{ file: item._file, height: 100 }"></div>
+                                                <!--fixed width and height -->
+                                                <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                                            </td>
+                                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2
+                                                }} MB
+                                            </td>
+                                            <td ng-show="uploader.isHTML5">
+                                                <div class="progress" style="margin-bottom: 0;">
+                                                    <div class="progress-bar" role="progressbar"
+                                                         ng-style="{ 'width': item.progress + '%' }"></div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-show="item.isSuccess"><i
+                                                        class="glyphicon glyphicon-ok"></i></span>
+                                                <span ng-show="item.isCancel"><i
+                                                        class="glyphicon glyphicon-ban-circle"></i></span>
+                                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                            </td>
+                                            <td nowrap>
+                                                <button type="button" class="btn btn-success btn-xs"
+                                                        ng-click="item.upload()"
+                                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                    <span class="glyphicon glyphicon-upload"></span> Upload
+                                                </button>
+                                                <button type="button" class="btn btn-warning btn-xs"
+                                                        ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs"
+                                                        ng-click="item.remove()">
+                                                    <span class="glyphicon glyphicon-trash"></span> Remove
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div>
+                                        <div>
+                                            Queue progress:
+                                            <div class="progress" style="">
+                                                <div class="progress-bar" role="progressbar"
+                                                     ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-s"
+                                                ng-click="uploader.uploadAll()"
+                                                ng-disabled="!uploader.getNotUploadedItems().length">
+                                            <span class="glyphicon glyphicon-upload"></span> Upload all
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-s"
+                                                ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-s"
+                                                ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                                            <span class="glyphicon glyphicon-trash"></span> Remove all
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="construction_time" class="col-lg-3 control-label">Videos: </label>
+                            <div class="col-lg-8">
+                                <div class="btn btn-default image-preview-input">
+                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                    <span class="image-preview-input-title">Subir Videos</span>
+                                    <input type="file" name="videos" nv-file-select="video" uploader="uploader2"
+                                           multiple accept="video/*"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="custom-preview" ng-if="formData.videos.length">
+                            <div id="img_container" ng-repeat="video in formData.videos">
+                                <video id="{{video.video}}" class="video-js video" controls preload="auto" width="640"
+                                       height="264"
+                                       poster="{{video.thumb}}" data-setup="{}">
+                                    <source src="{{video.video}}" type='video/mp4'>
+                                    <p class="vjs-no-js">
+                                        To view this video please enable JavaScript, and consider upgrading to a web
+                                        browser that
+                                        <a href="{{video.video}}" target="_blank">supports HTML5 video</a>
+                                    </p>
+                                </video>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>Info!</strong> Los videos subidos tienen que ser procesados por el servidor para
+                            poder ser reproducidos online. esto puede tardar unos minutos.
+                        </div>
+                </div>
+
+
+                <div class="container" ng-if="view_videos_uploader">
+                    <h3>Upload queue</h3>
+                    <p>Queue length: {{ uploader2.queue.length }}</p>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th width="50%">Name</th>
+                            <th ng-show="uploader2.isHTML5">Size</th>
+                            <th ng-show="uploader2.isHTML5">Progress</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in uploader2.queue">
+                            <td><strong>{{ item.file.name }}</strong></td>
+                            <td ng-show="uploader2.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB
+                            </td>
+                            <td ng-show="uploader2.isHTML5">
+                                <div class="progress" style="margin-bottom: 0;">
+                                    <div class="progress-bar" role="progressbar"
+                                         ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i
+                                        class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()"
+                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                    <span class="glyphicon glyphicon-upload"></span> Upload
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()"
+                                        ng-disabled="!item.isUploading">
+                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <div>
+                            Queue progress:
+                            <div class="progress" style="">
+                                <div class="progress-bar" role="progressbar"
+                                     ng-style="{ 'width': uploader2.progress + '%' }"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-s" ng-click="uploader2.uploadAll()"
+                                ng-disabled="!uploader2.getNotUploadedItems().length">
+                            <span class="glyphicon glyphicon-upload"></span> Upload all
+                        </button>
+                        <button type="button" class="btn btn-warning btn-s" ng-click="uploader2.cancelAll()"
+                                ng-disabled="!uploader2.isUploading">
+                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                        </button>
+                        <button type="button" class="btn btn-danger btn-s" ng-click="uploader2.clearQueue()"
+                                ng-disabled="!uploader2.queue.length">
+                            <span class="glyphicon glyphicon-trash"></span> Remove all
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-8" style="text-align: center">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Cancelar
+                    </button>
+                    <button class="btn btn-primary" type="submit" ng-click="userForm.$valid && createProject()">
+                        {{action}}
+                    </button>
+                </div>
+            </div>
+
+            </form>
+
+            <p></p>
+        </div>
+</div>
+</div>
+</section>
+</div>
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body">
+
+                <p>Está seguro que desea cancelar la operación?</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button ng-click="Back()" class="btn btn-primary">Sí</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</div>
+
+

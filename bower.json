@@ -1,0 +1,22 @@
+{
+  "name": "ExpressGenerado",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Eduardo M. Fírvida Donéstevez <efirvida@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/YanetP88/Team-VC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.18.1",
+    "angular-file-upload": "^v1.1.5"
+  }
+}

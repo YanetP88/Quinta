@@ -1,0 +1,79 @@
+<!-- Navegacion de la seccion central-->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="#/Users">USUARIO</a></li>
+                <li role="presentation"><a href="#/Clients">CLIENTE</a></li>
+                <li role="presentation"><a href="#/Projects">PROYECTO</a></li>
+                <li role="presentation"><a href="#">MAPA</a></li>
+                <li role="presentation"><a href="#/Profile">ADMINISTRADOR</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <br>
+
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-user"></span> Página de Perfil</h1>
+        <a href="/api/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+
+                <p>
+
+                    <strong>email</strong>: {{user}}<br>
+
+                </p>
+
+                <button class="btn btn-default" type="submit" ng-click="toggleCustom()">Cambiar contraseña</button>
+
+
+            </div>
+        </div>
+
+        <!-- FACEBOOK INFORMATION -->
+        <div class="col-sm-6">
+            <div data-ng-show="showError" ng-class="{fade:doFade}" class="alert alert-danger"> {{message}}</div>
+            <div class="well" id="well" ng-hide="custom">
+                <form name="myForm">
+
+                    <!-- Password -->
+                    <label for="pw1">Email*</label>
+                    <input type='email' id='email' name='email' class="form-control"
+                           ng-model="formData.email" required/>
+                    <label for="pw1">Password*</label>
+                    <input type='password' id='pw1' name='pw1' class="form-control"
+                           ng-model="formData.pw1" required/>
+                    <label for="pw2">Confirm Password*</label>
+                    <input type='password' id='pw2' name='pw2' class="form-control"
+                           ng-model="formData.pw2" required pw-check='pw1'/>
+                    <div class='msg-block' ng-show='myForm.$error'>
+  <span class='msg-error' ng-show='myForm.pw2.$error.pwmatch || submitted'>
+   Las contraseñas no coinciden.
+  </span>
+                        <br>
+                    </div>
+                    <button class="btn btn-primary" type="submit" ng-click="myForm.$valid && changePass()">Submit
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+           
+
+    
+
+    
